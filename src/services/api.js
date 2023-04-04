@@ -10,7 +10,7 @@ const getVideoList = () => {
         channel_title: 'BLACKPINK',
         created_time: 1680262260,
         video_sec: 185,
-        view_count: 88000,
+        view_count: 88300,
       },
       {
         video_id: '1wvz8Rs7dgc',

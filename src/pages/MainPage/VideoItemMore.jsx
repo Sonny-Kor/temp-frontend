@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import './VideoItemMore.scss'
+import './VideoItemMore.scss';
+
+import cx from 'classnames';
 
 
 function VideoItemMore(props) {
@@ -11,8 +13,10 @@ function VideoItemMore(props) {
     };
 
     return (
-      <div className="button" onClick={toggleMoreMenu}>
-        <MoreVertIcon className='icon' fontSize='small' />
+      <div className={cx('button', {isOpened: isOpenedMoreMenu})}>
+        <button className='btnMore' onClick={toggleMoreMenu}>
+          <MoreVertIcon className='icon' fontSize='small' />
+        </button>
         {isOpenedMoreMenu && 
         <div className='ContextMenu'>
             <div className='ContextItem'>
