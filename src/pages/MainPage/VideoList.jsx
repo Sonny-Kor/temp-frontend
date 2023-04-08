@@ -8,7 +8,7 @@ import './VideoList.scss';
 function VideoList(props) {
   let videoList = api.getVideoList();
 
-  return (<ul className="box-container">
+  return (<ul className="VideoList">
     {videoList.map((video,index)=>(
       <VideoItem key={video.video_id}
       title ={video.title} 

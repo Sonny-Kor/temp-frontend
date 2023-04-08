@@ -2,7 +2,7 @@
 
 import './VideoItem.scss';
 import VideoItemMore from './VideoItemMore';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function VideoItem({title, videoId, thumbnail, profileImg, channelTitle, viewCount, createdTime }) {
   
@@ -16,6 +16,8 @@ function VideoItem({title, videoId, thumbnail, profileImg, channelTitle, viewCou
       return parseInt(views / 100) / 10 + ' 천';
     } else if (views < 100000000){
       return parseInt(views / 1000) / 10 + ' 만';
+    } else if (views < 1000000000000){
+      return parseInt (views / 10000) / 10 + ' 억';
     }
     return views;
   }
@@ -48,7 +50,7 @@ function VideoItem({title, videoId, thumbnail, profileImg, channelTitle, viewCou
   }
   const onClickHandler = e => {
     console.log(e)
-    if (e.target.className == 'btnMore') {
+    if (e.target.className === 'btnMore') {
       console.log("버튼 클릭")
       e.preventDefault();
     }
@@ -56,10 +58,10 @@ function VideoItem({title, videoId, thumbnail, profileImg, channelTitle, viewCou
   return (
     <a className="VideoItem" onClick={onClickHandler} href={"https://youtu.be/" + videoId}>
       <div className='thumbnailWrapper'>
-        <img className='thumbnail' src={thumbnail} ></img>
+        <img className='thumbnail' src={thumbnail} alt='thumbnail' ></img>
       </div>
       <div className='InfoWrapper'>
-        <img className='ProfileCircle' src={profileImg}>
+        <img className='ProfileCircle' src={profileImg} alt='profileImg'>
         </img>
         <div className='TitleWrapper'>
           <div className='InnerTitle'>
