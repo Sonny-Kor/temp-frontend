@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import VideoItem from "./VideoItem";
 import * as api from "../../services/api";
 
@@ -7,6 +7,17 @@ import './VideoList.scss';
 
 function VideoList(props) {
   let videoList = api.getVideoList();
+
+  // const [videoList, setVideoList] = useState(null);
+
+  // const fetchVideoList = async () => {
+  //   const response = await axios.get("http://118.34.185.100:54114/vidoes/1/");
+  //   setVideoList(response.data);
+  // }
+  // useEffect(() => {
+  //   fetchVideoList();
+  // }, []);
+
 
   return (<ul className="VideoList">
     {videoList.map((video,index)=>(

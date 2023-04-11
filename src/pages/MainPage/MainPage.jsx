@@ -6,7 +6,7 @@ import Header from "../../common/Header/Header"
 import AsideBar from "../../common/AssideBar/AsideBar"
 function MainPage(props) {
   return <div className="MainPage">
-    <Header/>
+    <Header />
     <div className='content'>
       <AsideBar />
       <VideoList />
