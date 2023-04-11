@@ -9,7 +9,9 @@ function MainPage(props) {
     <Header />
     <div className='content'>
       <AsideBar />
-      <VideoList />
+      <div className="videoListWrapper">
+        <VideoList />
+      </div>
     </div>
   </div>;
 }

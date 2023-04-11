@@ -11,7 +11,7 @@ function VideoList(props) {
   // const [videoList, setVideoList] = useState(null);
 
   // const fetchVideoList = async () => {
-  //   const response = await axios.get("http://118.34.185.100:54114/vidoes/1/");
+  //   const response = await axios.get("http://118.34.185.100:54114/videos/1/");
   //   setVideoList(response.data);
   // }
   // useEffect(() => {

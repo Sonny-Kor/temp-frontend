@@ -1,5 +1,6 @@
 
 .Header{
+    background-color: white;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -7,10 +8,11 @@
     align-items: center;
     padding: 10px 16px;
     gap: 10px;
+    z-index: 10;
+    top: 0;
 
-    position: relative;
+    position: fixed;
     width: 100%;
-    height: 100%;
     .leftSide{
         display: flex;
         flex-direction: row;
@@ -50,10 +52,19 @@
     }
     .centerSide{
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        width: 0;
+        flex-grow: 1;
         height: 100%;
+        .searchBarSelectedBackground {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
         .searchBar{
             box-sizing: border-box;
             display: flex;
@@ -62,25 +73,31 @@
             align-items: center;
             padding: 0px;
             isolation: isolate;
-            width: 100%;
+            width: 700px;
             height: 100%;
             position: relative;
+            max-width: 100%;
           
             border: 1px solid #CCCCCC;
             border-radius: 24px;
+            --submit-button-width: 74px;
             
             .searchBarRecommendedList{
-                width: 100%;
+                width: calc(100% - var(--submit-button-width));
                 flex-direction: column;
                 align-items: center;
                 position: absolute;
                 top: 52px;
                 left: 0;
                 padding: 16px 0px;
-                
+                opacity: 0;
                 background: #FFFFFF;
                 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 16px;
+                transition: opacity ease .15s;
+            }
+            .inputArea:focus + .searchBarRecommendedList {
+                opacity: 1;
             }
             .inputArea{
                 border: none;
@@ -116,7 +133,8 @@
                 gap: 10px;
                 background-color: #F8F8F8;
 
-                border: 1px solid #CCCCCC;
+                border: none;
+                border-left: 1px solid #CCCCCC;
                 border-radius: 0px 24px 24px 0px;
                 &:hover{     
                     background: #F0F0F0;

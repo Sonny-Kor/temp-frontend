@@ -6,7 +6,7 @@
     align-items: center;
     padding: 8px 8px 16px;
     gap: 16px;
-    width: 100%;
+    width: 440px;
     transition: box-shadow ease .15s;
     text-decoration: none;
     color: black;
@@ -68,6 +68,12 @@
                     font-weight: 500;
                     font-size: 20px;
                     line-height: 28px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; /* 라인수 */
+                    -webkit-box-orient: vertical;
+                    word-wrap:break-word; 
                 }
                 .ChannelName {
                     color: var(--secondary-text-color);
@@ -109,6 +115,7 @@
                 gap: 8px;
                 width: 36px;
                 height: 36px;
+                position: relative;
                 .icon {
                     cursor: pointer;
                 }
